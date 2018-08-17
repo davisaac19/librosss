@@ -4,6 +4,8 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <item android:title="Categorías">
+        <menu>
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
@@ -20,6 +22,8 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
+        </menu>
+        </item>
     </group>
 
     <item android:title="Communicate">
