@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.Fragment;
 
 public class Principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +23,8 @@ public class Principal extends AppCompatActivity
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +85,16 @@ public class Principal extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            //Declarando fragmentManager
+            FragmentManager fragmentManager = getFragmentManagaer();
+            //Crear una nueva transacción
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            //Instanciando fragment
+            PrincipalFragment fragment = new PrincipalFragment();
+            //Añadiendo fragment a contenedor principal
+            transaction.add(R.id.drawer_layout, fragment);
+            //Confirmando el cambio
+            transaction.commit();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
